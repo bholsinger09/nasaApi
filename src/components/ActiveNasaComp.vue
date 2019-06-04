@@ -1,12 +1,12 @@
 <template>
-  <div class="Nasa">
+  <div class="Nasa col-6">
 
   </div>
 </template>
 
 <script>
   export default {
-    name: 'HelloWorld',
+    name: 'ActiveNasaComp',
     props: {
       msg: String
     }
