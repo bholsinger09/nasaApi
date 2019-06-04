@@ -10,31 +10,29 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    activeRover: {},
+
     results: []
 
   },
   mutations: {
+
     setResults(state, data) {
       state.results = data
     },
-    setActiveRover(state, data) {
-      state.activeRover = data
-    }
+
 
   },
   actions: {
     searchApi({ commit, dispatch }, query) {
       _api.get(query)
         .then(res => {
-          let data = res.data.results
+          debugger
+          let data = res.data
           commit('setResults', data)
         })
     },
 
-    setActiveNasa({ commit, dispatch }, nasaData) {
-      commit('setActiveNasa', nasaData)
-    }
+
 
   }
 })

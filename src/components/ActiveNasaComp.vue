@@ -1,5 +1,5 @@
 <template>
-  <div class="Nasa col-6">
+  <div class="ActiveNasaComp col-6">
 
   </div>
 </template>
