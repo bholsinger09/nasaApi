@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import axios from 'axios'
 
 const _api = axios.create({
-  baseURL: ""
+  baseURL: "https://api.nasa.gov/planetary/apod?api_key=xUdTefFTRzH8eLuEuZH0ieysBl5zLKAGXBQLgjKf"
 })
 
 Vue.use(Vuex)
@@ -24,6 +24,17 @@ export default new Vuex.Store({
 
   },
   actions: {
+    searchApi({ commit, dispatch }, query) {
+      _api.get(query)
+        .then(res => {
+          let data = res.data.results
+          commit('setResults', data)
+        })
+    },
+
+    setActiveNasa({ commit, dispatch }, nasaData) {
+      commit('setActiveNasa', nasaData)
+    }
 
   }
 })
